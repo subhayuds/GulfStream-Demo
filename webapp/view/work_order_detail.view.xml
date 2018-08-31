@@ -1,0 +1,451 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.work_order_detail" xmlns:uxap="sap.uxap" xmlns:m="sap.m" xmlns:layout1="sap.ui.layout" xmlns:core="sap.ui.core">
+    <uxap:ObjectPageLayout showTitleInHeaderContent="true" showHeaderContent="true" showAnchorBar="true" showFooter="false" subSectionLayout="TitleOnTop">
+        <uxap:headerContent>
+            <m:Text text="SC18131 Squawk 13.1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+            <m:Text text="Customer: Marmalade Skies Model GV / 586" width="200px" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+        </uxap:headerContent>
+        <uxap:headerTitle>
+            <uxap:ObjectPageHeader objectTitle="Work Order #SC248631" objectSubtitle="Overhaul main gear per 5000 Landing" headerDesign="Light" objectImageShape="Circle" isObjectIconAlwaysVisible="false" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false" isActionAreaAlwaysVisible="false">
+                <uxap:actions/>
+                <uxap:breadCrumbsLinks/>
+                <uxap:navigationBar>
+                    <m:Bar design="Auto">
+                        <m:contentLeft>
+                            <m:Button text="" type="Back" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress10"/>
+                        </m:contentLeft>
+                        <m:contentMiddle/>
+                        <m:contentRight>
+                            <m:Button text="Request Parts" type="Transparent" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress11"/>
+                            <m:Button text="Create Defect" type="Transparent" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress12"/>
+                            <m:Button text="Create Additional Work" type="Transparent" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress13"/>
+                            <m:Button text="Clock On" type="Transparent" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress14"/>
+                        </m:contentRight>
+                    </m:Bar>
+                </uxap:navigationBar>
+            </uxap:ObjectPageHeader>
+        </uxap:headerTitle>
+        <uxap:sections>
+            <uxap:ObjectPageSection showTitle="true" title="MainList" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Parts" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{/FullPartsListSet}">
+                                <m:infoToolbar>
+                                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <m:content>
+                                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:content>
+                                    </m:Toolbar>
+                                </m:infoToolbar>
+                                <m:headerToolbar/>
+                                <m:columns>
+                                    <m:Column width="20px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="OP" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Part" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Condition" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Registry" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:Text text="{path: 'OP', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:ObjectIdentifier title="{PartNum}" text="" titleActive="false" visible="true"/>
+                                            <m:Text text="{Description}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:ObjectNumber number="{path: 'Quantity', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" unit="" emphasized="true" state="None"/>
+                                            <m:Text text="{Condition}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="{R}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Button text="Delete Part" type="Transparent" icon="sap-icon://delete" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress15"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Tools" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Tools" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="true" growingThreshold="20" growingScrollToLoad="true">
+                                <m:infoToolbar>
+                                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <m:content>
+                                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:content>
+                                    </m:Toolbar>
+                                </m:infoToolbar>
+                                <m:headerToolbar/>
+                                <m:columns>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Tool Item" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Tool Category" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Activity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Tool Control Profile" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Quantity" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Tool Name" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Tool Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:ObjectIdentifier title="" text="Tool 1" titleActive="false" visible="true"/>
+                                            <m:Label text="Tool Cat" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Activity" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Control Profile" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="12" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="Tool 1" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:ObjectNumber number="Instructions" unit="" emphasized="true" state="None"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:Label text="Tool 2" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Category 2" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Activity 2" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Profile 2" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="22" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Tool 2" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Label text="Instructions" design="Bold" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="R&amp;I" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="R&amp;I" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false">
+                                <m:infoToolbar>
+                                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <m:content>
+                                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:content>
+                                    </m:Toolbar>
+                                </m:infoToolbar>
+                                <m:headerToolbar/>
+                                <m:columns>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="R&amp;I" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Part" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Serial #" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Comments" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:Text text="Remove" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:ObjectIdentifier title="GPS Receiver" text="822-2189-010" titleActive="false" visible="true"/>
+                                            <m:Text text="4M6CD" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="FAILED, needs to be replaced" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:Text text="Install" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:ObjectIdentifier title="GPS Receiver" text="822-2189-010" titleActive="false" visible="true"/>
+                                            <m:Text text="4M6CM" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="CCM is at the position of RIGHT IPC" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <layout1:HorizontalLayout>
+                                                <layout1:content/>
+                                            </layout1:HorizontalLayout>
+                                            <layout1:HorizontalLayout>
+                                                <layout1:content/>
+                                            </layout1:HorizontalLayout>
+                                            <layout1:HorizontalLayout>
+                                                <layout1:content/>
+                                            </layout1:HorizontalLayout>
+                                            <m:Button text="Add New R&amp;I" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress16"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Steps" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Steps" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Table width="100%" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{/OperationsDetailSet}">
+                                <m:infoToolbar>
+                                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <m:content>
+                                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:content>
+                                    </m:Toolbar>
+                                </m:infoToolbar>
+                                <m:headerToolbar/>
+                                <m:columns>
+                                    <m:Column width="20px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="#" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Select" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Description" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Resolution" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Reference" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Mech Insp." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Inspection" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <m:Text text="{Op}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:CheckBox text="" selected="{Selected}" editable="true" enabled="true" visible="true" width="auto" textDirection="Inherit"/>
+                                            <m:Text text="{Des}" width="auto" maxLines="20" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="{Res}" width="auto" maxLines="15" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="{Refer}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="{M}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+                                            <m:Text text="{I}" width="auto" maxLines="3" wrapping="true" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Add Step" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Add Step" mode="Expanded">
+                        <uxap:blocks>
+                            <m:TextArea rows="2" placeholder="Step Description" cols="200" maxLength="0" wrapping="None" visible="true"/>
+                            <m:TextArea rows="2" placeholder="Step Resolution" cols="200" maxLength="0" wrapping="Soft" visible="true"/>
+                            <m:ComboBox placeholder="Type..." editable="true" enabled="true" visible="true" width="auto" valueState="None" maxWidth="100%">
+                                <m:items>
+                                    <core:Item text="Step" enabled="true"/>
+                                    <core:Item text="Request Engineering Disposition" enabled="true"/>
+                                    <core:Item text="Request &lt;other?>" enabled="true"/>
+                                </m:items>
+                            </m:ComboBox>
+                            <m:Button text="Add Step" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Drawings" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Existing Documents" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Link href="/webapp/resources/f-16-1816071_1280.jpg" text="F-16-1816071" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false"/>
+                            <m:Link href="/webapp/resources/turbine-1658028_1920.jpg" text="Turbine-1658028" textAlign="Begin" width="auto" target="_blank" wrapping="false" enabled="true" visible="true" emphasized="false" subtle="false"/>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                    <uxap:ObjectPageSubSection title="Upload Documents" mode="Expanded">
+                        <uxap:blocks>
+                            <m:UploadCollection uploadEnabled="false" numberOfAttachmentsText="Add Files" showSeparators="All" noDataText="The UploadCollection coming from BUILD cannot work in WebIDE without additional work" maximumFileSize="10" mimeType="image/jpeg,image/gif,image/png,text/plain,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" multiple="false" uploadUrl="" sameFilenameAllowed="false" mode="SingleSelectMaster" uploadComplete="_onUploadCollectionUploadComplete" change="_onUploadCollectionChange" typeMissmatch="_onUploadCollectionTypeMissmatch" fileSizeExceed="_onUploadCollectionFileSizeExceed">
+                                <m:headerParameters/>
+                                <m:items/>
+                                <m:parameters/>
+                                <m:toolbar/>
+                            </m:UploadCollection>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+            <uxap:ObjectPageSection showTitle="true" title="Signoff" titleUppercase="true" visible="true">
+                <uxap:subSections>
+                    <uxap:ObjectPageSubSection title="Sign off" mode="Expanded">
+                        <uxap:blocks>
+                            <m:Table width="50%" noDataText="No data" mode="None" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false">
+                                <m:infoToolbar>
+                                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                                        <m:content>
+                                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:content>
+                                    </m:Toolbar>
+                                </m:infoToolbar>
+                                <m:headerToolbar/>
+                                <m:columns>
+                                    <m:Column width="20px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header/>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="Description of Work Performed" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                                        <m:header>
+                                            <m:Text text="" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                                        </m:header>
+                                        <m:footer/>
+                                    </m:Column>
+                                </m:columns>
+                                <m:items>
+                                    <m:ColumnListItem type="Active">
+                                        <m:cells>
+                                            <layout1:HorizontalLayout>
+                                                <layout1:content/>
+                                            </layout1:HorizontalLayout>
+                                            <m:TextArea rows="2" cols="200" maxLength="0" wrapping="Soft" visible="true"/>
+                                            <m:Button text="Signoff" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress17"/>
+                                        </m:cells>
+                                    </m:ColumnListItem>
+                                </m:items>
+                            </m:Table>
+                        </uxap:blocks>
+                        <uxap:moreBlocks/>
+                        <uxap:actions/>
+                    </uxap:ObjectPageSubSection>
+                </uxap:subSections>
+                <uxap:customAnchorBarButton/>
+            </uxap:ObjectPageSection>
+        </uxap:sections>
+        <uxap:footer/>
+    </uxap:ObjectPageLayout>
+</mvc:View>

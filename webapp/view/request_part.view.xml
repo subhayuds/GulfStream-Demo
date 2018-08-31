@@ -1,0 +1,65 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.request_part" xmlns:m="sap.m">
+    <m:Page showHeader="true" title="Find / Request Part" showFooter="true" showNavButton="false">
+        <m:content>
+            <m:Table width="653.00000000px" noDataText="No data" mode="SingleSelect" showSeparators="All" growing="false" growingThreshold="20" growingScrollToLoad="false" items="{/PartsSet}">
+                <m:infoToolbar>
+                    <m:Toolbar width="100%" height="auto" design="Auto" visible="false" enabled="true">
+                        <m:content>
+                            <m:Label text="Label" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:content>
+                    </m:Toolbar>
+                </m:infoToolbar>
+                <m:headerToolbar/>
+                <m:columns>
+                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <m:header>
+                            <m:Text text="Part #" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:header>
+                        <m:footer/>
+                    </m:Column>
+                    <m:Column width="20px" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <m:header>
+                            <m:Text text="Qty" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:header>
+                        <m:footer/>
+                    </m:Column>
+                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <m:header>
+                            <m:Text text="Condition" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:header>
+                        <m:footer/>
+                    </m:Column>
+                    <m:Column width="auto" hAlign="Left" vAlign="Top" minScreenWidth="Tablet" demandPopin="true" popinDisplay="Inline" mergeDuplicates="false">
+                        <m:header>
+                            <m:Text text="Registry" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:header>
+                        <m:footer/>
+                    </m:Column>
+                </m:columns>
+                <m:items>
+                    <m:ColumnListItem type="Active">
+                        <m:cells>
+                            <m:ObjectIdentifier title="" text="{p2}" titleActive="false" visible="true"/>
+                            <m:Text text="{path: 'q', type: 'sap.ui.model.type.Float', formatOptions: { maxFractionDigits: 2 }}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                            <m:Text text="{c}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                            <m:Text text="{Reg}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+                        </m:cells>
+                    </m:ColumnListItem>
+                </m:items>
+            </m:Table>
+            <m:Button text="Request Part" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress20"/>
+        </m:content>
+        <m:footer>
+            <m:Bar design="Auto">
+                <m:contentLeft/>
+                <m:contentMiddle/>
+                <m:contentRight>
+                    <m:Button text="" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress9"/>
+                </m:contentRight>
+            </m:Bar>
+        </m:footer>
+        <m:headerContent/>
+        <m:subHeader/>
+        <m:customHeader/>
+    </m:Page>
+</mvc:View>

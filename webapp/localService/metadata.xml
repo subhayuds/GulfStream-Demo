@@ -1,0 +1,75 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="d6e73d36bc21d29f0ebf48a3" xml:lang="en" sap:schema-version="0000" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityContainer Name="d6e73d36bc21d29f0ebf48a3_Entities" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="WorkListSet" EntityType="d6e73d36bc21d29f0ebf48a3.WorkList" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="OperationsDetailSet" EntityType="d6e73d36bc21d29f0ebf48a3.OperationsDetail" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="PartsSet" EntityType="d6e73d36bc21d29f0ebf48a3.Parts" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="AircraftSet" EntityType="d6e73d36bc21d29f0ebf48a3.Aircraft" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+                <EntitySet Name="FullPartsListSet" EntityType="d6e73d36bc21d29f0ebf48a3.FullPartsList" sap:creatable="true" sap:updatable="true" sap:deletable="true"/>
+            </EntityContainer>
+            <EntityType Name="WorkList">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="WO" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="WO"/>
+                <Property Name="Title" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Title"/>
+                <Property Name="Part" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Part"/>
+                <Property Name="Serial" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Serial"/>
+                <Property Name="Status" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Status"/>
+                <Property Name="Squawk" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Squawk"/>
+            </EntityType>
+            <EntityType Name="OperationsDetail">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="Selected" Type="Edm.Boolean" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Selected"/>
+                <Property Name="Op" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Op"/>
+                <Property Name="Des" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Des"/>
+                <Property Name="Res" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Res"/>
+                <Property Name="Tx" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Tx"/>
+                <Property Name="M" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="M"/>
+                <Property Name="I" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="I"/>
+                <Property Name="F" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="F"/>
+                <Property Name="Refer" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Refer"/>
+            </EntityType>
+            <EntityType Name="Parts">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="p2" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="p2"/>
+                <Property Name="d" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="d"/>
+                <Property Name="q" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="q"/>
+                <Property Name="c" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="c"/>
+                <Property Name="Reg" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Reg"/>
+            </EntityType>
+            <EntityType Name="Aircraft">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="SN" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="SN"/>
+                <Property Name="M" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="M"/>
+                <Property Name="R" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="R"/>
+                <Property Name="H" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="H"/>
+                <Property Name="C" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="C"/>
+                <Property Name="Na" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Na"/>
+            </EntityType>
+            <EntityType Name="FullPartsList">
+                <Key>
+                    <PropertyRef Name="ID"/>
+                </Key>
+                <Property Name="ID" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="ID"/>
+                <Property Name="OP" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="OP"/>
+                <Property Name="PartNum" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="P"/>
+                <Property Name="Description" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="D"/>
+                <Property Name="Quantity" Type="Edm.Decimal" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="Q"/>
+                <Property Name="Condition" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="C"/>
+                <Property Name="R" Type="Edm.String" sap:creatable="true" sap:updatable="true" sap:deletable="true" sap:label="R"/>
+            </EntityType>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

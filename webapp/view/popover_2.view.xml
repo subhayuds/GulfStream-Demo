@@ -1,0 +1,13 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.popover_2" xmlns:m="sap.m">
+    <m:Popover bounce="false" contentHeight="350px" contentWidth="250px" horizontalScrolling="true" modal="false" offsetX="0" offsetY="0" placement="Right" showHeader="true" title="Title" verticalScrolling="true" visible="true">
+        <m:content>
+            <m:Input placeholder="Part #" type="Text" showValueHelp="false" enabled="true" visible="true" width="173px" valueHelpOnly="false" maxLength="0"/>
+            <m:Button text="Search" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress7"/>
+        </m:content>
+        <m:beginButton/>
+        <m:customHeader/>
+        <m:endButton/>
+        <m:footer/>
+        <m:subHeader/>
+    </m:Popover>
+</mvc:View>

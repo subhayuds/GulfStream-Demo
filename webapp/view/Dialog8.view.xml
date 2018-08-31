@@ -1,0 +1,13 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.Dialog8" xmlns:m="sap.m">
+    <m:Dialog horizontalScrolling="true" icon="sap-icon://delete" showHeader="true" state="Warning" stretch="false" title="Are you sure?" type="Standard" verticalScrolling="true">
+        <m:content/>
+        <m:beginButton/>
+        <m:buttons>
+            <m:Button text="Yes" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress5"/>
+            <m:Button text="No" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress6"/>
+        </m:buttons>
+        <m:customHeader/>
+        <m:endButton/>
+        <m:subHeader/>
+    </m:Dialog>
+</mvc:View>

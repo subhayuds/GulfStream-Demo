@@ -1,0 +1,15 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.dialog_2" xmlns:m="sap.m">
+    <m:Dialog horizontalScrolling="true" showHeader="true" state="None" stretch="false" title="Part Request" type="Standard" verticalScrolling="true">
+        <m:content>
+            <m:Text text="Thank you, your part has been requested." width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit"/>
+        </m:content>
+        <m:beginButton/>
+        <m:buttons>
+            <m:Button text="OK" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress5"/>
+            <m:Button text="Cancel" type="Default" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false" press="_onButtonPress6"/>
+        </m:buttons>
+        <m:customHeader/>
+        <m:endButton/>
+        <m:subHeader/>
+    </m:Dialog>
+</mvc:View>

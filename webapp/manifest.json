@@ -1,0 +1,205 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.2.0",
+		"id": "com.sap.build.standard.wbRas",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"main": {
+				"uri": "/here/goes/your/serviceUrl/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"ach": "ach",
+		"resources": "resources.json",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.2.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "generated.app.view.r_i",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.32.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"uri": "i18n/i18n.properties"
+			},
+			"": {
+				"dataSource": "main",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"loadMetadataAsync": false,
+					"json": true,
+					"bJSON": true,
+					"defaultBindingMode": "TwoWay",
+					"useBatch": true,
+					"refreshAfterChange": false,
+					"disableHeadRequestForToken": true
+				}
+			}
+		},
+		"resources": {
+			"css": []
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.build.standard.wbRas.view",
+				"controlId": "App",
+				"clearTarget": false,
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": [
+						"tiles"
+					]
+				}
+			},
+			"targets": {
+				"tiles": {
+					"controlAggregation": "pages",
+					"viewName": "tiles",
+					"viewId": "tiles",
+					"viewLevel": 1,
+					"transition": "slide"
+				},
+				"work_list": {
+					"controlAggregation": "pages",
+					"viewName": "work_list",
+					"viewId": "work_list",
+					"viewLevel": 6,
+					"transition": "slide"
+				},
+				"work_order_detail": {
+					"controlAggregation": "pages",
+					"viewName": "work_order_detail",
+					"viewId": "work_order_detail",
+					"viewLevel": 7,
+					"transition": "slide"
+				},
+				"request_part": {
+					"controlAggregation": "pages",
+					"viewName": "request_part",
+					"viewId": "request_part",
+					"viewLevel": 5,
+					"transition": "slide"
+				},
+				"work_order_detail___shell": {
+					"controlAggregation": "pages",
+					"viewName": "work_order_detail___shell",
+					"viewId": "work_order_detail___shell",
+					"viewLevel": 8,
+					"transition": "slide"
+				},
+				"r_i": {
+					"controlAggregation": "pages",
+					"viewName": "r_i",
+					"viewId": "r_i",
+					"viewLevel": 9,
+					"transition": "slide"
+				}
+			},
+			"routes": [
+				{
+					"pattern": "tiles/:context:",
+					"name": "tiles",
+					"target": [
+						"tiles"
+					]
+				},
+				{
+					"pattern": "",
+					"name": "default",
+					"target": [
+						"tiles"
+					]
+				},
+				{
+					"pattern": "work_list/:context:",
+					"name": "work_list",
+					"target": [
+						"work_list"
+					]
+				},
+				{
+					"pattern": "work_order_detail/:context:",
+					"name": "work_order_detail",
+					"target": [
+						"work_order_detail"
+					]
+				},
+				{
+					"pattern": "request_part/:context:",
+					"name": "request_part",
+					"target": [
+						"request_part"
+					]
+				},
+				{
+					"pattern": "work_order_detail___shell/:context:",
+					"name": "work_order_detail___shell",
+					"target": [
+						"work_order_detail___shell"
+					]
+				},
+				{
+					"pattern": "r_i/:context:",
+					"name": "r_i",
+					"target": [
+						"r_i"
+					]
+				}
+			]
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
+	}
+}

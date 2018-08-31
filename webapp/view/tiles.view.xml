@@ -1,0 +1,43 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="com.sap.build.standard.wbRas.controller.tiles" xmlns:m="sap.m" xmlns:layout="sap.ui.commons.layout">
+    <m:Page showHeader="false" title="Page Title" showFooter="false" showNavButton="false" enableScrolling="false">
+        <m:content>
+            <layout:AbsoluteLayout horizontalScrolling="Hidden" verticalScrolling="Auto">
+                <layout:positions>
+                    <layout:PositionContainer left="52px" top="31px">
+                        <layout:control>
+                            <m:StandardTile title="My Work Orders" number="4" numberUnit="Orders" info="Open work orders" infoState="None" icon="sap-icon://product" press="_onStandardTilePress"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                    <layout:PositionContainer left="290px" top="32px">
+                        <layout:control>
+                            <m:StandardTile title="Open Inspections" number="1" numberUnit="" info="Open Inspections" infoState="None" icon="sap-icon://warning"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                    <layout:PositionContainer left="769px" top="32px">
+                        <layout:control>
+                            <m:StandardTile title="In Engineering Disposition" number="1" numberUnit="" info="Open Eng. Disp." infoState="None" icon="sap-icon://warning"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                    <layout:PositionContainer left="537px" top="32px">
+                        <layout:control>
+                            <m:StandardTile title="Open Parts Requests" number="2" numberUnit="" info="Open Parts Requests" infoState="None" icon="sap-icon://warning" press="_onStandardTilePress1"/>
+                        </layout:control>
+                    </layout:PositionContainer>
+                </layout:positions>
+            </layout:AbsoluteLayout>
+        </m:content>
+        <m:footer>
+            <m:Bar design="Auto">
+                <m:contentLeft/>
+                <m:contentMiddle/>
+                <m:contentRight>
+                    <m:Button text="Approve" type="Accept" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <m:Button text="Reject" type="Reject" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                    <m:Button text="" type="Default" icon="sap-icon://action" iconFirst="true" width="auto" enabled="true" visible="true" iconDensityAware="false"/>
+                </m:contentRight>
+            </m:Bar>
+        </m:footer>
+        <m:headerContent/>
+        <m:customHeader/>
+    </m:Page>
+</mvc:View>
